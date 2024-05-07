@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  proftpd:
+    image: proftpd
+    container_name: proftpd-server
+    ports:
+      - "50021:21"
+    volumes:
+      - /opt/docker/proftpd/etc:/etc/proftpd
+      - /var/log/proftpd:/var/log/proftpd
+    restart: unless-stopped
